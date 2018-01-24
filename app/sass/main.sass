@@ -334,7 +334,7 @@ html.mm-opening .mm-menu~.mm-slideout
 			position: absolute
 			width: 3px
 			height: 50px
-			background: $accent
+			background: $dark
 			left: 50%
 			transform: translateX(-50%)
 			bottom: -6px
@@ -344,35 +344,35 @@ html.mm-opening .mm-menu~.mm-slideout
 		margin: 15px 0
 		margin-top: 30px
 		text-transform: uppercase
-		color: $accent
+		color: $dark
 	h3
 		font-size: 22px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
 		text-transform: uppercase
-		color: $accent
+		color: $dark
 	h4
 		font-size: 20px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
 		text-transform: uppercase
-		color: $accent
+		color: $dark
 	h5
 		font-size: 18px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
 		text-transform: uppercase
-		color: $accent
+		color: $dark
 	h6
 		font-size: 16px
 		font-weight: 500
 		margin: 15px 0
 		margin-top: 30px
 		text-transform: uppercase
-		color: $accent
+		color: $dark
 	b
 		font-size: 16px
 		font-weight: 900
@@ -383,7 +383,7 @@ html.mm-opening .mm-menu~.mm-slideout
 		max-width: 850px
 		font-weight: 500
 	a
-		color: $accent
+		color: $dark
 		&:hover, &:focus
 			text-decoration: underline
 	img
@@ -703,12 +703,27 @@ html.mm-opening .mm-menu~.mm-slideout
 		background: darken($accent, 5)
 		color: #ffffff
 .btn-accent
-	background: $accent
-	text-align: right
+	background: $accent2
 	padding: 10px 45px
-	border-radius: 5px
-	font-size: 23px
+	border-radius: 500px
+	font-size: 16px
+	font-weight: 900
 	color: #FFFFFF
+	display: inline-block
+	text-align: center
+	&:hover, &:focus
+		background: $dark
+		color: #FFFFFF
+.btn-shadow
+	background: #FFFFFF
+	padding: 10px 45px
+	border-radius: 500px
+	font-size: 14px
+	font-weight: 900
+	color: $dark
+	display: inline-block
+	text-align: center
+	box-shadow: 0px 1px 7.7px 2.3px rgba(0, 0, 0, 0.13)
 	&:hover, &:focus
 		background: $dark
 		color: #FFFFFF
@@ -852,6 +867,307 @@ html.mm-opening .mm-menu~.mm-slideout
 .fotorama__nav:before, .fotorama__stage:before
 	background-image: none
 	background: none
- /*Project end*/
+
+/*Mainpage start*/
+#my-header
+	position: relative
+	border-top: solid 6px $accent
+	background: transparent
+	min-height: 112px
+	border-bottom: 1px solid $grey
+	z-index: 1
+	.lvl1-c
+		//overflow: hidden
+		width: 100%
+		min-height: 112px
+		display: flex
+		align-items: center
+	.logo-c
+		max-width: 100px
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		.txt-l
+			font-size: 10px
+			font-weight: 900
+			text-transform: uppercase
+			color: #FFFFFF
+			font-family: $default-font2
+	.lvl1
+		position: relative
+		display: flex
+		align-items: center
+		//background-image: url("../img/bgBridge2.png")
+		background-repeat: no-repeat
+		background-position: right
+		background-size: cover
+		.logo-svg-h
+			object
+				pointer-events: none
+		//&:after
+		//	content: ''
+		//	border-bottom: 1px solid $grey
+		//	bottom: 0px
+		//	left: -2000px
+		//	position: absolute
+		//	min-width: 6000px
+		.logo-svg-h-c
+			p
+				font-size: 12px
+				text-align: left
+				text-transform: uppercase
+				margin-bottom: 0
+				white-space: nowrap
+	.constr-b
+		display: flex
+	.slogan-h
+		position: relative
+		display: flex
+		align-items: center
+		justify-content: center
+		width: 150px
+		text-align: center
+		margin-left: 50px
+		.txt
+			position: relative
+			z-index: 1
+			font-weight: 900
+			font-size: 14px
+			font-family: $default-font2
+			color: #FFFFFF
+			display: block
+			width: 100%
+		&:before
+			content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150px" height="127px"><defs><filter filterUnits="userSpaceOnUse" id="Filter_0" x="0px" y="0px" width="150px" height="127px"><feOffset in="SourceAlpha" dx="0" dy="4" /><feGaussianBlur result="blurOut" stdDeviation="0" /><feFlood flood-color="rgb(0, 0, 0)" result="floodOut" /><feComposite operator="atop" in="floodOut" in2="blurOut" /><feComponentTransfer><feFuncA type="linear" slope="0.22"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="PSgrad_0" x1="0%" x2="96.126%" y1="0%" y2="27.564%"><stop offset="0%" stop-color="rgb(255,255,255)" stop-opacity="0.16" /><stop offset="100%" stop-color="rgb(18,16,11)" stop-opacity="0.16" /></linearGradient></defs><g filter="url(#Filter_0)"><path fill-rule="evenodd" fill="rgb(27, 100, 192)" d="M23.011,0.000 L150.000,0.000 L129.545,122.999 L-0.000,122.999 L23.011,0.000 Z"/></g><path fill="url(#PSgrad_0)" d="M23.011,0.000 L150.000,0.000 L129.545,122.999 L-0.000,122.999 L23.011,0.000 Z"/></svg>')
+			display: block 
+			position: absolute
+			height: 123px
+			width: 150px
+			left: 0px
+			top: -10px
+			z-index: 0
+	.contact-c-h
+		display: flex
+		justify-content: flex-end
+		.mail-c
+			display: flex
+			align-items: center
+			.svg-cont
+				display: flex
+				align-items: center
+			.txt
+				padding-left: 10px
+				a
+					color: #FFFFFF
+		.phone-c
+			display: flex
+			align-items: center
+			margin-left: 50px
+			.svg-cont
+				display: flex
+				align-items: center
+			.txt
+				padding-left: 10px
+				a
+					color: $accent
+					font-size: 18px
+					font-weight: 900
+					font-family: $default-font2
+.main-menu
+	width: 100%
+	display: flex
+	flex-direction: column
+	ul
+		list-style: none
+		margin: 0
+		margin-top: 6px
+		padding: 0px
+		text-align: right
+		display: flex
+		align-items: center
+		justify-content: flex-end
+		margin-right: -12px
+		li
+			display: inline-block
+			margin-left: 5px
+			position: relative
+			z-index: 2
+			//padding: 31px 0
+			&:first-child
+				margin-left: 0px
+			a
+				font-size: 16px
+				font-weight: 500
+				color: #FFFFFF
+				padding: 8px 12px
+				border-radius: 50px
+				&:hover
+					background-image: -moz-linear-gradient( -16deg, rgb(255,255,255) 0%, rgb(18,16,11) 100%)
+					background-image: -webkit-linear-gradient( -16deg, rgb(255,255,255) 0%, rgb(18,16,11) 100%)
+					background-image: -ms-linear-gradient( -16deg, rgb(255,255,255) 0%, rgb(18,16,11) 100%)
+					background: $accent
+			ul
+				padding: 0px
+			&:hover>.subm
+				display: block
+			.subm
+				display: none
+				min-width: 300px
+				position: absolute
+				top: 88px
+				//bottom: 0px
+				left: 0px
+				background: #FFFFFF
+				text-align: left
+				padding: 20px 23px
+				z-index: 2
+				border-top: solid 2px $accent
+				li
+					text-align: left
+					margin: 0px
+					border: none
+					display: block
+					line-height: 1.2
+					margin-bottom: 15px
+					padding: 0px
+					&:last-child
+						margin-bottom: 0px
+					a
+						font-size: 18px
+						text-transform: none
+						color: $dark
+						font-weight: 500
+						&:hover
+							color: $accent
+
+#my-content
+	.main-win-c
+		max-height: 800px
+		height: 100vh
+		position: relative
+		background-color: $dark
+		position: relative
+		margin-top: -113px
+		.prev-bg
+			position: absolute
+			top: 0px
+			bottom: 0px
+			right: 0px
+			left: 0px
+			opacity: 0.3
+			&:before
+				content: ''
+				background-image: url('../img/bg-h-g.png')
+				background-position: top
+				display: block
+				position: absolute
+				width: 100%
+				left: 0px
+				top: 0px
+				height: 490px
+				right: 0px
+				z-index: 1
+		.content-main-win
+			height: 100%
+			display: flex
+			align-items: center
+			.h1
+				color: #FFFFFF
+				font-weight: 900
+				font-family: $default-font2
+				font-size: 48px
+				text-transform: uppercase
+				.accent-txt
+					font-family: $default-font2
+					font-weight: 900
+			.btn-accent
+				margin-top: 30px
+			.preim-c
+				height: 100%
+				display: flex
+				align-items: center
+			.preim-ul
+				padding: 0px
+				margin: 0px
+				list-style: none
+				position: relative
+				padding-left: 32px
+				&:before
+					content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15px" height="219px"><path fill-rule="evenodd" fill-opacity="0.541" fill="rgb(232, 237, 240)" d="M14.906,219.000 C14.906,219.000 15.034,120.439 15.012,118.555 L14.906,118.453 L14.906,118.233 L14.678,118.233 L5.797,109.683 L14.662,101.149 C14.658,101.022 14.653,100.894 14.649,100.767 L14.906,100.767 L14.906,0.000 L10.859,0.000 L10.859,99.207 L0.004,109.658 L10.859,120.145 L10.859,219.000 L14.906,219.000 Z"/></svg>')
+					position: absolute
+					left: -16px
+				li
+					color: #FFFFFF
+					position: relative
+					padding-left: 30px
+					font-size: 18px
+					margin-bottom: 16px
+					&:last-child
+						margin-bottom: 0px
+					&:before
+						content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16px" height="16px"><path fill-rule="evenodd" fill="rgb(30, 112, 199)" d="M7.994,-0.005 C3.575,-0.005 -0.007,3.578 -0.007,7.997 C-0.007,12.416 3.575,15.999 7.994,15.999 C12.413,15.999 15.996,12.416 15.996,7.997 C15.996,3.578 12.413,-0.005 7.994,-0.005 ZM12.584,6.482 C11.410,7.735 10.236,8.990 9.062,10.244 C8.407,10.943 7.750,11.639 7.099,12.341 C7.000,12.448 6.937,12.472 6.823,12.357 C5.746,11.273 4.659,10.199 3.587,9.111 C2.976,8.491 3.226,7.492 4.036,7.264 C4.466,7.142 4.841,7.260 5.155,7.572 C5.685,8.098 6.215,8.624 6.737,9.159 C6.866,9.291 6.939,9.297 7.070,9.156 C8.361,7.771 9.658,6.389 10.958,5.012 C11.403,4.541 12.024,4.497 12.493,4.886 C12.738,5.089 12.889,5.409 12.889,5.779 C12.879,6.014 12.784,6.268 12.584,6.482 Z"/></svg>')
+						position: absolute
+						left: 0px
+						top: 1px
+
+.accent-txt
+	color: $accent
+
+section
+	padding: $sec-padding 0px
+	.sec-h1
+		margin-bottom: 50px
+		font-size: 36px
+		font-weight: 900
+		font-family: $default-font2
+		text-align: center
+
+.slider-object
+	.controls-slider
+		padding-right: 42px
+		position: relative
+		.btn-c
+			display: flex
+			flex-wrap: wrap
+			justify-content: flex-start
+			a
+				padding: 10px 20px
+				display: block
+				margin-right: 10px
+		.controls-rl
+			position: absolute
+			right: 0px
+			top: 0px
+			display: flex
+			align-items: center
+			height: 100%
+			.slick-btn
+				padding: 5px
+				display: flex
+				align-items: center
+				cursor: pointer
+	.object-slider
+		margin-top: 26px
+		.item
+			.prev
+				width: 100%
+				min-height: 480px
+			.content
+				.h2
+					font-weight: 900
+					font-size: 24px
+					text-transform: none
+					font-family: $default-font2
+					margin-top: 0px
+				p
+					font-size: 14px
+					font-weight: 500
+#my-footer
+	min-height: 500px
+
+/*Mainpage end*/
+
+/*Project end*/
 
 @import "media" // Всегда в конце
