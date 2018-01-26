@@ -206,10 +206,10 @@ input
 	position: fixed
 	z-index: 2
 	bottom: 16px
-	right: 20px
+	right: 15px
 	background: $accent
-	width: 40px
-	height: 40px
+	width: 35px
+	height: 35px
 	display: block
 	text-decoration: none
 	-webkit-border-radius: 35px
@@ -226,8 +226,8 @@ input
 		color: #FFFFFF
 		margin: 0
 		position: relative
-		left: 10px
-		top: 5px
+		left: 7px
+		top: 2px
 		font-size: 19px
 		-webkit-transition: all 0.3s ease
 		-moz-transition: all 0.3s ease
@@ -247,35 +247,47 @@ input
 .hamburger
 	position: relative
 	-webkit-appearance: button-bevel!important
-	padding-bottom: 4px
-	padding-top: 13px
+	padding: 0px
+	display: flex
+	align-items: center
+	justify-content: flex-start
+	padding-top: 3px
 .hamburger-inner, .hamburger-inner:after, .hamburger-inner:before
 	height: 2px
-	background: $dark
+	background: #FFFFFF
 	width: 24px
 .hamburger--emphatic .hamburger-inner:after
 	top: 7px
 .hamburger-inner:before
 	top: -7px
+.hamburger-inner:after
+	bottom: -7px
 .hamb-cont
 	text-align: right
 	display: inline-block
 	height: 50px
 	vertical-align: top
+.hamburger-box
+	display: flex
+	justify-content: center
+.menu-m-b
+	display: flex
+	align-items: center
 
 html.mm-opening .mm-menu~.mm-slideout
 	transform: translate(0px,0)!important
 	transform: translate3d(0,0,0)!important
 #my-menu
-	background: #2f2d2e
+	background: rgba(#ffffff, 0.7)
 	z-index: 12
 	top: 50px
-	max-width: 325px
+	max-width: 100%
+	height: 100%
 	&:not(.mm-menu)
 		display: none
 	.mm-title
 		color: #FFFFFF
-		border-color: #000000
+		border-color: transparent
 		font-size: 18px
 		line-height: 50px
 		padding: 0px
@@ -284,11 +296,11 @@ html.mm-opening .mm-menu~.mm-slideout
 		width: 15px
 		height: 15px
 	&.mm-menu .mm-btn:after, &.mm-menu .mm-btn:before
-		border-color: #FFFFFF
+		border-color: transparent
 	.mm-navbar .mm-btn:first-child
 		top: 3px
 	.mm-navbar
-		border-color: #444243
+		border-color: transparent
 		line-height: 50px
 		height: 50px
 	.mm-next
@@ -305,18 +317,21 @@ html.mm-opening .mm-menu~.mm-slideout
 			&.active
 				color: $accent
 			&:hover
-				background: #444243
+				background: transparent
 				color: $accent
 			text-align: left
 			font-family: $default-font
 			font-size: 14px
 			font-weight: 900
 			border-color: transparent
-			color: #FFFFFF
+			color: $dark
 	.mm-listview>li>a, .mm-listview>li>span
-		padding: 10px 10px 10px 40px
-		border-bottom: 1px solid #444243
-		font-weight: 300
+		padding: 10px 15px
+		border-bottom: 1px solid transparent
+		font-weight: 900
+		font-family: $default-font2
+		text-align: center
+		font-size: 23px
 	.mm-listview .mm-next+a, .mm-listview .mm-next+span
 		margin-right: 0px
 	.mm-hasnavbar
@@ -325,6 +340,21 @@ html.mm-opening .mm-menu~.mm-slideout
 			&:first-child a
 				padding-top: 10px
 				margin-top: 10px
+	.close-btn
+		top: 0
+		right: 3px
+		background: red
+		z-index: 999999999999
+		height: 60px
+		width: 60px
+		display: flex!important
+		align-items: center
+		justify-content: center
+		padding: 0px
+.mm-menu .mm-fx-panels-none.mm-panel, .mm-menu.mm-fx-panels-none .mm-panel
+	display: flex
+	align-items: center
+	justify-content: center
 .content
 	overflow-x: hidden
 	h1
@@ -629,6 +659,7 @@ html.mm-opening .mm-menu~.mm-slideout
 		font-family: $default-font
 		border-color: $grey
 		height: 42px
+		padding-left: 20px
 	.jq-selectbox__trigger
 		border-color: transparent
 	li
@@ -653,14 +684,124 @@ html.mm-opening .mm-menu~.mm-slideout
 		white-space: inherit
 		&:nth-child(odd)
 			background: lighten($grey, 10)
+.jq-selectbox li
+	transition: none
+.inputfile
+	width: 0.1px
+	height: 0.1px
+	opacity: 0
+	overflow: hidden
+	position: absolute
+	z-index: -1
+	max-width: 100px
+.inputfile + label
+	font-size: 1.25em
+	color: white
+	background-color: #36424e
+	cursor: pointer
+	display: flex
+	align-items: center
+	justify-content: space-between
+	padding: 0 20px
+	margin-bottom: 0px
+	height: 42px
+	border-radius: 5px
+	font-size: 14px
+	font-family: $default-font
+	font-weight: 500
+	.txt
+		font-size: 14px
+		font-family: $default-font
+		font-weight: 500
+	.svg-cont
+		padding-left: 20px
+		border-left: solid 2px #1e2a36
+		height: 100%
+		display: flex
+		align-items: center
+
+.file-c
+	width: 50%
+
+.inputfile:focus + label,
+.inputfile + label:hover
+	background-color: #36424e
+
 
 #consult, .popup
 	background: #1e2a36
 	padding-top: 70px
+	max-width: 770px
+	&.popup-sm
+		input
+			margin-bottom: 0px
+		.inpt-group
+			margin-bottom: 14px
+		textarea
+			width: 100%
+			border-radius: 5px
+			max-height: 350px
+		.h4
+			margin-bottom: 26px
+	&.white_popup
+		background: #FFFFFF
+		a
+			color: $dark
+		input
+			border: solid 1px $dark
+		textarea
+			border: solid 1px $dark
+		.jq-selectbox__select
+			border: solid 1px $dark
+		p
+			color: $dark
+		.h4
+			color: $dark
+			margin-bottom: 7px
+		.fancybox-close-small:after
+			color: $accent
+		.inpt-group
+			align-items: center
+			button
+				margin-left: 10px
+		.about-vac
+			margin-bottom: 22px
+			.item
+				margin-bottom: 18px
+				&>p
+					font-size: 14px
+					font-weight: 700
+					margin: 0px
+					margin-bottom: 3px
+			.content
+				background: $accent
+				border-radius: 5px
+				padding: 18px
+				p
+					margin-top: 0px
+					margin-bottom: 0px
+				*
+					color: #FFFFFF
+					font-size: 14px
+					line-height: 1.2
 	.jq-selectbox
 		margin-right: 10px
+		width: 50%
+	.condition
+		display: flex
+		align-items: center
+		justify-content: space-between
+		margin-bottom: 6px
+		.item
+			p, span
+				font-size: 16px
+				font-weight: 700
+			display: flex
+			.svg-cont
+				display: flex
+				align-items: center
+				margin: 0 10px
 	.container
-		max-width: 770px
 		height: 100%
 		justify-content: center
 		align-items: center
@@ -1051,7 +1192,7 @@ html.mm-opening .mm-menu~.mm-slideout
 					font-size: 18px
 					font-weight: 900
 					font-family: $default-font2
-.main-menu
+.main-menu2
 	width: 100%
 	display: flex
 	flex-direction: column
@@ -1176,6 +1317,8 @@ html.mm-opening .mm-menu~.mm-slideout
 					content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="15px" height="219px"><path fill-rule="evenodd" fill-opacity="0.541" fill="rgb(232, 237, 240)" d="M14.906,219.000 C14.906,219.000 15.034,120.439 15.012,118.555 L14.906,118.453 L14.906,118.233 L14.678,118.233 L5.797,109.683 L14.662,101.149 C14.658,101.022 14.653,100.894 14.649,100.767 L14.906,100.767 L14.906,0.000 L10.859,0.000 L10.859,99.207 L0.004,109.658 L10.859,120.145 L10.859,219.000 L14.906,219.000 Z"/></svg>')
 					position: absolute
 					left: -16px
+					top: 50%
+					transform: translateY(-50%)
 				li
 					color: #FFFFFF
 					position: relative

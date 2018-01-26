@@ -4,10 +4,42 @@
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-  /**/
+  #my-header
+    .slogan-h
+      margin: 0px
+      .txt
+        padding-left: 28px
+        white-space: nowrap
+    .contact-c-h
+      .phone-c
+        margin-left: 25px
+    .menu-m-b
+      margin-left: 20px
+  .slider-object .controls-slider .btn-c a
+    margin-bottom: 15px
+  .clickbait
+    align-items: center
+    .btn-accent
+      white-space: nowrap
+  .about-company .blocks-year .prev-r-c .prev
+    background-position: center
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px)
-  /**/
+  #my-header
+    .main-menu2
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: flex-end
+  .clickbait
+    flex-direction: column
+    align-items: center
+    p
+      margin-bottom: 15px
+      text-align: center
+  .about-company .blocks-year .prev-l-c
+    padding-right: 15px
+    padding-left: 0
 /* Small Devices, Tablets */
 @media only screen and (max-width : 768px)
   .content
@@ -19,9 +51,100 @@
         display: block
         min-width: 500px
         width: 100%
+  #my-header
+    .slogan-h
+      display: none
+    .contact-c-h
+      flex-direction: column
+      .mail-c
+        justify-content: flex-end
+  #my-content .main-win-c .content-main-win .preim-c
+    margin-top: 30px
+  #my-content .main-win-c .content-main-win .preim-ul:before
+    left: 50%
+    top: 0px!important
+    transform: rotate(90deg) translateY(0%)!important
+    display: none
+  .slider-object .object-slider .item .content
+    padding-left: 15px
+    margin-top: 30px
+    max-width: 100%
+  section
+    padding: 50px 0
+  .form-cont
+      margin-top: 30px
+  #my-footer
+    padding: 15px 0px
+  #my-content .main-win-c .content-main-win .h1
+    font-size: 36px
+  #my-content .main-win-c .content-main-win .preim-ul
+    padding-left: 0px
+  .secTrigger
+    left: 50%
+    transform: translateX(-50%)
+    right: unset
+    display: flex
+    align-items: center
+    bottom: 16px
+    top: unset
+    .soc-r
+      display: flex
+      .item
+        margin-top: 0px
+        min-width: 36px
+        margin-left: 5px
+    ul
+      display: flex
+      li
+        &:hover:before
+          top: -100%
+          transform: translateX(-50%)
+          left: 50%
+          right: unset
+        &:hover:after
+          top: -9px
+          right: unset
+          left: 50%
+          transform: rotate(90deg)
 /* Extra Small Devices, Phones */
-@media only screen and (max-width : 576px)
-  /**/
+@media only screen and (max-width : 576px) 
+  #my-header
+    .lvl1-c
+      padding: 0px
+      .container
+        width: 100%
+    .main-menu2
+      flex-direction: column
+      align-items: flex-end
+    .contact-c-h
+      .phone-c
+        margin-left: 0px
+        .txt a
+          font-size: 13px
+          white-space: nowrap
+  .secTrigger
+    ul
+      display: none
+  #my-content .main-win-c
+    min-height: 800px
+  #my-content .main-win-c .content-main-win .h1
+    font-size: 23px
+  section .sec-h1
+    font-size: 30px
+  .about-company .blocks-year .prev-l-c
+    padding-right: 0px
+  .about-company .blocks-year .prev-r-c
+    padding-right: 0px
+  .employer .preim-bl
+    .preim-i
+      flex-wrap: wrap
+      .item
+        width: 100%
+        margin-bottom: 30px
+  .feedback-slider
+    padding: 0 22px
+  #my-footer p
+    margin-bottom: 10px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

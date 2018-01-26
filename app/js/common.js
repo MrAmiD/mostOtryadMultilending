@@ -37,10 +37,15 @@ function feedbackSliderSliderInit(){//слайдер на главной стр�
         dots: false,
         responsive: [
             {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2
+                }
+            },
+            {
                 breakpoint: 768,
                 settings: {
-                    arrows: false,
-                    dots: false
+                    slidesToShow: 1
                 }
             }
         ],
@@ -57,9 +62,32 @@ function feedbackSliderSliderInit(){//слайдер на главной стр�
 
 $(function() {
 
+
+    /*File input start*/
+    var inputs = document.querySelectorAll( '.inputfile' );
+    Array.prototype.forEach.call( inputs, function( input )
+    {
+        var label	 = input.nextElementSibling,
+            labelVal = label.innerHTML;
+
+        input.addEventListener( 'change', function( e )
+        {
+            var fileName = '';
+            if( this.files && this.files.length > 1 )
+                fileName = ( this.getAttribute( 'data-multiple-caption' ) || '' ).replace( '{count}', this.files.length );
+            else
+                fileName = e.target.value.split( '\\' ).pop();
+
+            if( fileName )
+                label.querySelector( 'span' ).innerHTML = fileName;
+            else
+                label.innerHTML = labelVal;
+        });
+    });
+    /*File input end*/
+
     $('.secTrigger ul li').on('click', function () {
         $("html, body").animate({ scrollTop: $($(this).data().trigger).offset().top - 0}, 600);
-
     });
 
     $.datetimepicker.setLocale('ru');
@@ -107,7 +135,9 @@ $(function() {
     });
 
 
+    //$('#my-menu').html($('.main-menu').html()).append('<div class="close-btn"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px"><path fill-rule="evenodd" fill="rgb(28, 104, 200)" d="M24.911,20.762 L17.111,12.964 L24.910,5.165 L20.716,0.975 L12.919,8.773 L5.121,0.976 L0.928,5.165 L8.728,12.965 L0.929,20.764 L5.119,24.957 L12.920,17.156 L20.720,24.956 L24.911,20.762 Z"/></svg></div>');
     $('#my-menu').html($('.main-menu').html());
+
     //var  socials = $("#my-menu").data();
     $("#my-menu").mmenu({
         "extensions": [
@@ -117,7 +147,7 @@ $(function() {
             //"pagedim-black"
         ],
         "offCanvas": {
-            "position": "left"
+            "position": "top"
         },
         "navbar": {
             "title": ""
@@ -136,25 +166,25 @@ $(function() {
 
     api.bind( "open:finish", function() {
         $("#menu-btn").addClass('is-active');
-        $(".mm-menu.mm-offcanvas.mm-bottom").css('height', $(window).height() - $('.header-top').height());
+        $(".mm-menu.mm-offcanvas.mm-bottom").css('height', $(window).height() - $('#my-header').height());
 
         //bugfix fixed menu 1-3 START
         $(window).scroll();
-        $(".slick-menu").css({ top: $(window).scrollTop()});
+        $("#my-header").css({ top: $(window).scrollTop()});
     });
     api.bind( "open:start", function() {
         $(window).scroll();
         //bugfix fixed menu 2
-        $(".slick-menu").css({ top: $(window).scrollTop() });
+        $("#my-header").css({ top: $(window).scrollTop() });
     });
     api.bind( "open:before", function() {
-        $('#my-menu').css('top', $('.slick-menu').height());
+        $('#my-menu').css('top', $('#my-header').height()+6);
     });
     api.bind( "close:finish", function() {
         $("#menu-btn").removeClass('is-active');
 
         //bugfix fixed menu 3 END
-        $(".slick-menu").css({ top: 0});
+        $("#my-header").css({ top: 0});
     });
 
 
