@@ -58,6 +58,11 @@ body
 	//overflow-x: hidden
 	opacity: 1
 	margin: 0px
+.preload *
+	-webkit-transition: none !important
+	-moz-transition: none !important
+	-ms-transition: none !important
+	-o-transition: none !important
 *
 	transition: color .3s ease, opacify .3s ease, border-color .3s ease, background .3s ease
 	font-family: $default-font
@@ -152,23 +157,23 @@ input
 		opacity: 1
 @keyframes fade-translateLeft
 	0%
-		transform: translate3d(-50px, -50%, 0px)
+		transform: translate3d(-50px, 0, 0px)
 		opacity: 0
 	50%
-		transform: translate3d(-50px, -50%, 0px)
+		transform: translate3d(-50px, 0, 0px)
 		opacity: 0
 	100%
-		transform: translate3d(0px, -50%, 0px)
+		transform: translate3d(0px, 0, 0px)
 		opacity: 1
 @keyframes fade-translateRight
 	0%
-		transform: translate3d(50px, -50%, 0px)
+		transform: translate3d(50px, 0, 0px)
 		opacity: 0
 	50%
-		transform: translate3d(50px, -50%, 0px)
+		transform: translate3d(50px, 0, 0px)
 		opacity: 0
 	100%
-		transform: translate3d(0px, -50%, 0px)
+		transform: translate3d(0px, 0, 0px)
 		opacity: 1
 @keyframes ani-mouse
 	0%
@@ -282,7 +287,10 @@ html.mm-opening .mm-menu~.mm-slideout
 	z-index: 12
 	top: 50px
 	max-width: 100%
-	height: 100%
+	height: calc(100% - 112px)
+	transition: all .3s ease!important
+	*
+		transition: all .3s ease!important
 	&:not(.mm-menu)
 		display: none
 	.mm-title
@@ -743,47 +751,6 @@ html.mm-opening .mm-menu~.mm-slideout
 			max-height: 350px
 		.h4
 			margin-bottom: 26px
-	&.white_popup
-		background: #FFFFFF
-		a
-			color: $dark
-		input
-			border: solid 1px $dark
-		textarea
-			border: solid 1px $dark
-		.jq-selectbox__select
-			border: solid 1px $dark
-		p
-			color: $dark
-		.h4
-			color: $dark
-			margin-bottom: 7px
-		.fancybox-close-small:after
-			color: $accent
-		.inpt-group
-			align-items: center
-			button
-				margin-left: 10px
-		.about-vac
-			margin-bottom: 22px
-			.item
-				margin-bottom: 18px
-				&>p
-					font-size: 14px
-					font-weight: 700
-					margin: 0px
-					margin-bottom: 3px
-			.content
-				background: $accent
-				border-radius: 5px
-				padding: 18px
-				p
-					margin-top: 0px
-					margin-bottom: 0px
-				*
-					color: #FFFFFF
-					font-size: 14px
-					line-height: 1.2
 	.jq-selectbox
 		margin-right: 10px
 		width: 50%
@@ -883,6 +850,48 @@ html.mm-opening .mm-menu~.mm-slideout
 	.btn-accent
 		font-size: 18px
 		cursor: pointer
+.white_popup
+	background: #FFFFFF
+	a
+		color: $dark
+	input
+		border: solid 1px $dark
+	textarea
+		border: solid 1px $dark
+	.jq-selectbox__select
+		border: solid 1px $dark
+	p
+		color: $dark
+	.h4
+		color: $dark
+		margin-bottom: 7px
+	.fancybox-close-small:after
+		color: $accent
+	.inpt-group
+		align-items: center
+		button
+			margin-left: 10px
+	.about-vac
+		margin-bottom: 22px
+		.item
+			margin-bottom: 18px
+			&>p
+				font-size: 14px
+				font-weight: 700
+				margin: 0px
+				margin-bottom: 3px
+		.content
+			background: $accent
+			border-radius: 5px
+			padding: 18px
+			p
+				margin-top: 0px
+				margin-bottom: 0px
+			*
+				color: #FFFFFF
+				font-size: 14px
+				line-height: 1.2
+
 
 /*buttons start*/
 .btn-underline
@@ -1112,6 +1121,10 @@ html.mm-opening .mm-menu~.mm-slideout
 			text-transform: uppercase
 			color: #FFFFFF
 			font-family: $default-font2
+			.zao
+				font-weight: 700
+				font-size: 10px
+				white-space: nowrap
 	.lvl1
 		position: relative
 		display: flex
@@ -1298,11 +1311,15 @@ html.mm-opening .mm-menu~.mm-slideout
 				font-size: 48px
 				text-transform: uppercase
 				margin-bottom: 40px
+				animation: fade-translateBottom 1s ease
+
 				.accent-txt
 					font-family: $default-font2
 					font-weight: 900
 			.btn-accent
 				margin-top: 30px
+			.btn-accent2
+				animation: fade-translateBottom 1.5s ease
 			.preim-c
 				height: 100%
 				display: flex
@@ -1332,6 +1349,18 @@ html.mm-opening .mm-menu~.mm-slideout
 						position: absolute
 						left: 0px
 						top: 1px
+					&:nth-of-type(1)
+						animation: fade-translate .8s ease
+					&:nth-of-type(2)
+						animation: fade-translate .9s ease
+					&:nth-of-type(3)
+						animation: fade-translate 1s ease
+					&:nth-of-type(4)
+						animation: fade-translate 1.1s ease
+					&:nth-of-type(5)
+						animation: fade-translate 1.2s ease
+					&:nth-of-type(6)
+						animation: fade-translate 1.3s ease
 
 .accent-txt
 	color: $accent
@@ -1434,6 +1463,8 @@ section
 		.prev-l-c
 			padding-right: 0px
 			.prev
+				&.animate
+					animation: fade-translateLeft 1.5s ease
 				&:before
 					content: ''
 					position: absolute
@@ -1450,6 +1481,8 @@ section
 			padding-left: 0px
 			.prev
 				background-position: right
+				&.animate
+					animation: fade-translateRight 1.5s ease
 		.prev
 			height: 100%
 			width: 100%
@@ -1476,6 +1509,8 @@ section
 				border-top-right-radius: 40px
 		.content-c
 			box-shadow: 0px 1px 7.7px 2.3px rgba(0, 0, 0, 0.13)
+			&.animate
+				animation: fade-translateBottom 1.5s ease
 		.content
 			padding: 54px 17px
 			p
@@ -1512,6 +1547,22 @@ section
 			display: flex
 			justify-content: space-around
 			margin-top: 35px
+			&.preim-i-u.animate
+				.item
+					&:nth-of-type(1)
+						animation: fade-translateLeft 1.1s ease
+					&:nth-of-type(2)
+						animation: fade-translate 1.1s ease
+					&:nth-of-type(3)
+						animation: fade-translateRight 1.1s ease
+			&.preim-i-b.animate
+				.item
+					&:nth-of-type(1)
+						animation: fade-translateBottom 1.1s ease
+					&:nth-of-type(2)
+						animation: fade-translateBottom 1.1s ease
+					&:nth-of-type(3)
+						animation: fade-translateBottom 1.1s ease
 			.item
 				display: flex
 				justify-content: flex-start
@@ -1527,6 +1578,11 @@ section
 					align-items: center
 					justify-content: center
 					border: solid 5px #777d82
+					&:hover
+						border-color: #31578c
+						background: $accent
+						svg path
+							fill: #ffffff
 				.txt
 					color: #FFFFFF
 					font-size: 16px
@@ -1657,6 +1713,17 @@ section
 						margin-left: 14px
 			.btn-dark
 				padding: 10px 40px
+	&.animate
+		.vac-cont
+			&>.item
+				animation: fade-translate .8s ease
+				animation-delay: 1s
+				&:nth-of-type(1)
+					animation: fade-translate .7s ease
+				&:nth-of-type(2)
+					animation: fade-translate .9s ease
+				&:nth-of-type(3)
+					animation: fade-translate 1s ease
 	.all-spec
 		width: 265px
 		margin: auto
@@ -1803,6 +1870,30 @@ section
 		&:hover
 			text-decoration: underline
 /*Mainpage end*/
+
+#singleVac
+	border-bottom: solid 1px $grey
+	.popup
+		max-width: 100%
+		padding-top: 0px
+		padding-bottom: 0px
+		.condition
+			justify-content: flex-start
+			.item
+				margin-top: 20px
+				margin-bottom: 16px
+				&:nth-child(2)
+					margin-left: 115px
+				p
+					margin: 0px
+	.inpt-group
+		input
+			margin-bottom: 0px
+			background: #e8edf0
+		button
+			font-size: 16px
+	.content p
+		max-width: 100%
 
 /*Project end*/
 

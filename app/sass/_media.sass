@@ -7,9 +7,12 @@
   #my-header
     .slogan-h
       margin: 0px
+      margin-left: 15px
       .txt
         padding-left: 28px
         white-space: nowrap
+      &:before
+        transform: scale(0.85, 1)
     .contact-c-h
       .phone-c
         margin-left: 25px
@@ -122,6 +125,8 @@
         .txt a
           font-size: 13px
           white-space: nowrap
+    .constr-b
+      margin-left: 15px
   .secTrigger
     ul
       display: none
@@ -145,6 +150,48 @@
     padding: 0 22px
   #my-footer p
     margin-bottom: 10px
+  #consult .inpt-group, .popup .inpt-group
+    flex-direction: column
+  #consult input, .popup input
+    margin-bottom: 15px
+  #consult .h4, .popup .h4
+    margin-bottom: 30px
+  #consult, .popup
+    margin-left: 15px
+    margin-right: 15px
+    padding-left: 0px
+    padding-right: 0px
+    padding-top: 40px
+  #consult .inpt-group button, .popup .inpt-group button
+    width: 100%
+  #consult.popup-sm input, .popup.popup-sm input
+    margin-bottom: 10px
+  #consult .fancybox-close-small, .popup .fancybox-close-small
+    right: 8px
+  #consult .jq-selectbox, .popup .jq-selectbox
+    width: 100%
+  .file-c
+    width: 100%
+    margin-top: 10px
+  #consult .condition, .popup .condition
+    flex-direction: column
+    justify-content: flex-start
+    align-items: flex-start
+  #consult .inpt-group input:first-of-type, .popup .inpt-group input:first-of-type
+    margin-right: 0px
+  #consult.white_popup .inpt-group button, .popup.white_popup .inpt-group button
+    margin-left: 0px
+  #singleVac .popup .condition .item:nth-child(2)
+    margin-left: 0px
+    margin-top: -14px
+  #singleVac .inpt-group input
+    margin-bottom: 10px
+  #singleVac .inpt-group button
+    margin-top: 10px
+  #singleVac .popup
+    max-width: 100%
+    padding: 0 15px
+    margin: 0px
 /* Custom, iPhone Retina */
 @media only screen and (max-width : 320px)
 	/**/

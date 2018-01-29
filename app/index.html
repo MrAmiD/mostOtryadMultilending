@@ -31,7 +31,7 @@
 
 </head>
 
-<body>
+<body class="preload">
 
 <!--Top Arrow start-->
 <a href="javascript:" id="return-to-top">
@@ -134,6 +134,7 @@
 									</div>
 									<div class="txt-l">
 										мостоотряд 123
+										<div class="zao">ЗАО «Уралмостострой»</div>
 									</div>
 								</a>
 							</div>
@@ -191,24 +192,24 @@
 					</div>
 					<div class="hidden-md-down main-menu">
 						<ul>
-							<li><a href="">
+							<li data-trigger="#vaka" ><a href="javascript:void(0)">
 								Вакансии
 							</a></li>
-							<li><a href="">
+							<li data-trigger="#slider-object"><a href="javascript:void(0)">
 								Объекты строительства
 							</a></li>
-							<li><a href="">
+							<li data-trigger="#about-company"><a href="javascript:void(0)">
 								О компании
 							</a>
 							</li>
-							<li><a href="">
+							<li data-trigger="#employer"><a href="javascript:void(0)">
 								Гарантии
 							</a></li>
-							<li><a href="">
+							<li data-trigger="#feedback"><a href="javascript:void(0)">
 								Отзывы
 							</a>
 							</li>
-							<li><a href="">
+							<li data-trigger="#contact"><a href="javascript:void(0)">
 								Контакты
 							</a></li>
 						</ul>
@@ -269,7 +270,6 @@
 			</div>
 		</div>
 	</div>
-
 	<section id="slider-object" class="slider-object">
 		<div class="container">
 			<div class="row">
@@ -549,7 +549,92 @@
 			</div>
 		</div>
 	</section>
+	<section id="singleVac">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="sec-h1">
+						Вакансия
+					</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12 white_popup popup">
+					<!--start callback_form-->
+					<div class="h4">
+						Инженер-лаборант в строительную лабораторию
+					</div>
 
+					<div class="condition">
+						<div class="item">
+							<p>
+								<span class="accent-txt">25 000</span>
+								–
+								<span class="accent-txt">30 000 </span>
+								рублей
+							</p>
+						</div>
+						<div class="item">
+							<span>
+								Вахта 15/15
+							</span>
+							<span class="svg-cont">
+								<svg
+										xmlns="http://www.w3.org/2000/svg"
+										xmlns:xlink="http://www.w3.org/1999/xlink"
+										width="31px" height="2px">
+									<path fill-rule="evenodd"  fill="rgb(28, 104, 200)"
+											d="M0.000,2.000 L0.000,0.000 L31.000,0.000 L31.000,2.000 L0.000,2.000 Z"/>
+								</svg>
+							</span>
+							<span>
+								 8-и часовой рабочий день
+							</span>
+						</div>
+					</div>
+
+					<div class="about-vac">
+						<div class="item">
+							<p>Требования:</p>
+							<div class="content">
+								<p>
+									Высшее образование по специальности: «Мосты и тоннели», «Строительство авто-дорог и аэродромов», «Производство строительных сконструкций и материалов». Опыт работы желателен.
+								</p>
+							</div>
+						</div>
+						<div class="item">
+							<p>Условия:</p>
+							<div class="content">
+								<p>
+									Срочный трудовой договор От 1 года <br>
+									Вахта 15/15 или* 8-ми часовой рабочий день***<br>
+									Рабочий день 8.00 - 20.00 <br>
+									Прохождение предварительного медицинского осмотра <br>
+									Вахта 15/15
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<form >
+						<input type="hidden" name="theme" value="Заявка на обратный звонок на странице Главная">
+						<div class="inpt-group">
+							<input type="text" id="sname2" name="name" placeholder="ФИО">
+							<input type="tel" id="phone21" name="phone" placeholder="+7 (___) ___-____">
+							<button type="" name="callback_form" class="btn-accent" value="Заказать">Отправить</button>
+						</div>
+
+
+
+						<p style="font-size: 12px">
+							Нажимая "Отправить", Я подтверждаю, что ознакомлен с <a href="" target="_blank">политикой конфиденциальности</a> и даю согласие на обработку своих персональных данных.
+						</p>
+					</form>
+					<!--start callback_form-->
+				</div>
+			</div>
+		</div>
+	</section>
 	<section id="about-company" class="about-company">
 		<div class="container">
 			<div class="row">
@@ -593,7 +678,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section id="employer" class="employer" style="background-image: url('img/empBg.png')">
 		<div class="container">
 			<div class="row">
@@ -611,7 +695,7 @@
 						</div>
 					</div>
 					<div class="col-12">
-						<div class="preim-i">
+						<div class="preim-i preim-i-u">
 							<div class="item">
 								<div class="svg-cont">
 									<svg
@@ -667,7 +751,7 @@
 						</div>
 					</div>
 					<div class="col-12">
-						<div class="preim-i">
+						<div class="preim-i preim-i-b">
 							<div class="item">
 								<div class="svg-cont">
 									<svg
@@ -718,7 +802,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section id="feedback" class="feedback">
 		<div class="container">
 			<div class="row">
@@ -798,14 +881,13 @@
 					</div>
 				</div>
 				<div class="col-12 text-center">
-					<a href="javascript:void(0)" onclick="$('#consult').click();" class="btn-accent fb-btn">
+					<a href="javascript:void(0)" onclick="$('#feedbackForm').click();" class="btn-accent fb-btn">
 						Оставить свой отзыв
 					</a>
 				</div>
 			</div>
 		</div>
 	</section>
-
 	<section id="vaka" class="vaka">
 		<div class="container">
 			<div class="row">
@@ -989,7 +1071,6 @@
 			</div>
 		</div>
 	</section>
-
 	<section id="contact" class="contact" style="background-image: url('img/contactBg.png')">
 		<div class="container">
 			<div class="row">
@@ -1351,6 +1432,16 @@
 	/*For this page END*/
 
 	/*For all pages START*/
+
+	/*Animation*/
+	$(window).scroll(function () {
+		scrollAnimate($('.about-company .blocks-year .prev'));
+		scrollAnimate($('.about-company .blocks-year .content-c'));
+		scrollAnimate($('.employer .preim-bl .preim-i-u'));
+		scrollAnimate($('.employer .preim-bl .preim-i-b'));
+		scrollAnimate($('#vaka'));
+	});
+
 	$(function() {
 		objectSliderInit();
 		feedbackSliderSliderInit();

@@ -59,9 +59,19 @@ function feedbackSliderSliderInit(){//слайдер на главной стр�
 }
 
 
+function scrollAnimate(selector){
+    var absOffsetTop = selector.offset().top - $(window).height();
+    var scrollWin = $(window).scrollTop();
+    if (scrollWin >= absOffsetTop - 100) {
+        //console.log('addClass animate');
+        selector.addClass('animate');
+    } else {
+        //console.log('removeClass animate')
+        selector.removeClass('animate');
+    }
+};
 
 $(function() {
-
 
     /*File input start*/
     var inputs = document.querySelectorAll( '.inputfile' );
@@ -89,6 +99,19 @@ $(function() {
     $('.secTrigger ul li').on('click', function () {
         $("html, body").animate({ scrollTop: $($(this).data().trigger).offset().top - 0}, 600);
     });
+
+    $('.main-menu ul li').on('click', function () {
+        $("html, body").animate({ scrollTop: $($(this).data().trigger).offset().top - 0}, 600);
+    });
+
+
+
+    $(document).on( "click", "#my-menu .mm-listview li", function(){
+        $("html, body").animate({ scrollTop: $($(this).data().trigger).offset().top - 0}, 600);
+        var API = $("#my-menu").data( "mmenu" );
+        API.close();
+    });
+
 
     $.datetimepicker.setLocale('ru');
     $('.date-p').datetimepicker({
@@ -142,12 +165,10 @@ $(function() {
     $("#my-menu").mmenu({
         "extensions": [
             "fx-panels-none",
-            "fx-listitems-slide",
-            "fx-menu-slide",
-            //"pagedim-black"
+            "fx-listitems-slide" 
         ],
         "offCanvas": {
-            "position": "top"
+            "position": "bottom"
         },
         "navbar": {
             "title": ""
