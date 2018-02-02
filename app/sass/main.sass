@@ -58,11 +58,6 @@ body
 	//overflow-x: hidden
 	opacity: 1
 	margin: 0px
-.preload *
-	-webkit-transition: none !important
-	-moz-transition: none !important
-	-ms-transition: none !important
-	-o-transition: none !important
 *
 	transition: color .3s ease, opacify .3s ease, border-color .3s ease, background .3s ease
 	font-family: $default-font
@@ -583,6 +578,7 @@ html.mm-opening .mm-menu~.mm-slideout
 	display: inline-block
 	margin-top: 20px
 	margin-bottom: 5px
+	display: none
 	.arr
 		min-width: 160px
 		min-height: 35px
@@ -1287,6 +1283,7 @@ html.mm-opening .mm-menu~.mm-slideout
 			right: 0px
 			left: 0px
 			opacity: 0.3
+			background-size: cover
 			&:before
 				content: ''
 				background-image: url('../img/bg-h-g.png')
@@ -1448,6 +1445,7 @@ section
 	padding: 30px
 	justify-content: space-between
 	margin-top: 23px
+	align-items: center
 	p
 		font-size: 24px
 		font-weight: 900
@@ -1457,6 +1455,7 @@ section
 		line-height: 1.2
 	.btn-accent
 		width: 265px
+		max-height: 50px
 
 .about-company
 	.blocks-year
@@ -1673,10 +1672,15 @@ section
 
 .vaka
 	.vac-cont
+		margin-bottom: 30px
 		&>.item
 			box-shadow: 0px 1px 7.7px 2.3px rgba(0, 0, 0, 0.13)
 			padding: 15px
 			margin-bottom: 30px
+			height: 100%
+			display: flex
+			flex-direction: column
+			justify-content: space-between
 			&:hover
 				cursor: pointer
 				background: $accent
@@ -1696,14 +1700,16 @@ section
 			.vac-title
 				font-weight: 900
 				font-size: 18px
-				margin-bottom: 15px
+				margin-bottom: 0px
 				min-height: 56px
+				line-height: 1.3
 			.vac-opt
-				margin-bottom: 60px
+				margin-bottom: 40px
 				&>.item
 					display: flex
 					align-items: center
-					margin-bottom: 5px
+					margin-bottom: 0px
+					min-height: 56px
 					.svg-cont
 						display: flex
 						align-items: center
@@ -1711,6 +1717,7 @@ section
 						justify-content: center
 					.opt-n
 						margin-left: 14px
+						line-height: 1.3
 			.btn-dark
 				padding: 10px 40px
 	&.animate
@@ -1894,7 +1901,9 @@ section
 			font-size: 16px
 	.content p
 		max-width: 100%
-
+.jq-selectbox .jq-selectbox__dropdown
+	max-height: 212px
+	overflow: auto
 /*Project end*/
 
 @import "media" // Всегда в конце
